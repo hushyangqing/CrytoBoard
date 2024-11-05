@@ -2,9 +2,10 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_pymongo import PyMongo
 from apscheduler.schedulers.background import BackgroundScheduler
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 import json
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -17,9 +18,8 @@ try:
 except Exception as e:
     print("MongoDB connection error:", e)
 scheduler = BackgroundScheduler()
-scheduler.start()
 
-crytoCurrency = {'BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON'}
+crytoCurrency = {'BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON', 'ADA', 'SHIB', 'AVAX', 'BCH', 'LINK', 'DOT', 'LEO', 'SUI', 'DAI', 'LTC'}
 nameMapping = {'Bitcoin':'BTC',
                'Ethereum':'ETH',
                'Tether': 'USDT',
@@ -29,45 +29,89 @@ nameMapping = {'Bitcoin':'BTC',
                'XRP':'XRP',
                'Dogecoin':'DOGE',
                'TRON':'TRX',
-               'Toncoin':'TON'}
+               'Toncoin':'TON',
+               'Cardano':'ADA',
+               'Shiba Inu':'SHIB',
+               'Avalanche': 'AVAX',
+               'Bitcoin Cash': 'BCH',
+               'Chainlink':'LINK',
+               'Polkadot':'DOT',
+               'UNUS SED LEO':'LEO',
+               'Sui':'SUI',
+               'Dai':'DAI',
+               'Litecoin':'LTC'}
 
-def update_bitcoin_price(): 
+crypto_history = {}
+
+start_time = datetime.now()
+
+def fetch_and_store_price():
+    global start_time, crypto_history
+
+    # For testing, run this only for 10 minutes
+    if datetime.now() > start_time + timedelta(minutes=10):
+        scheduler.remove_job('price_fetch_job')
+        # After 10 minutes, store history and reset
+        store_history()
+        return
+
+    # Fetch cryptocurrency data from CoinMarketCap API
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
-    'start':'1',
-    'limit':'10',
-    'convert':'USD'
+        'start': '1',
+        'limit': '10',
+        'convert': 'USD'
     }
     headers = {
-    'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': coinMarketkey
+        'Accepts': 'application/json',
+        'X-CMC_PRO_API_KEY': coinMarketkey
     }
     response = requests.get(url, headers=headers, params=parameters)
+    
     if response.status_code != 200:
         print("Failed to fetch data from API.")
         return
     
     data = response.json()
-    collection = mongo.cx['info']['price']
+    price_collection = mongo.cx['info']['price']
+    history_collection = mongo.cx['info']['history_price']
+
     for crypto in data['data']:
-        crypto_entry = {
-            "id": crypto['id'],
-            "name": crypto['name'],
-            "symbol": crypto['symbol'],
-            "slug": crypto['slug'],
-            "price": crypto['quote']['USD']['price'],
-            "last_updated": crypto['quote']['USD']['last_updated']
-        }
-        collection.update_one(
-            {"symbol": crypto['symbol']},
-            {"$set": crypto_entry},
+        symbol = crypto['symbol']
+        if symbol in crytoCurrency:
+            latest_price = {
+                "symbol": symbol,
+                "name": crypto['name'],
+                "slug": crypto['slug'],
+                "price": crypto['quote']['USD']['price'],
+                "last_updated": crypto['quote']['USD']['last_updated']
+            }
+            price_collection.update_one(
+                {"symbol": symbol},
+                {"$set": latest_price},
+                upsert=True
+            )
+            if symbol not in crypto_history:
+                crypto_history[symbol] = [] 
+            crypto_history[symbol].append({
+                "price": latest_price["price"],
+                "timestamp": latest_price["last_updated"]
+            })
+
+def store_history():
+    history_collection = mongo.cx['info']['history_price']
+    for symbol, history in crypto_history.items():
+        history_collection.update_one(
+            {"symbol": symbol},
+            {"$set": {"history": history}},
             upsert=True
         )
+    print("Historical price data stored in MongoDB.")
+    crypto_history.clear() 
 
-    print("Cryptocurrency data updated.")
-
-scheduler.add_job(update_bitcoin_price, 'interval', days=1)
+scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
+scheduler.start()
 
 if __name__ == '__main__':
-    update_bitcoin_price()
+    #fetch_and_store_price() unmark it in real case
     app.run(debug=True)
