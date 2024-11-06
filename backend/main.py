@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import requests
 import json
 import time
+from collections import defaultdict
 
 app = Flask(__name__)
 CORS(app)
@@ -45,7 +46,7 @@ crypto_history = {}
 top10Crypto = ['BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON']
 start_time = datetime.now()
 
-# price related
+###Price###
 def fetch_and_store_price():
     global start_time, crypto_history, top10Crypto
 
@@ -113,7 +114,7 @@ def store_history():
 #scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
 #scheduler.start()
 
-### API Endpoints###
+###API Endpoints###
 @app.route('/currentPrice/<symbol>', methods=['GET'])
 def get_price(symbol):
     price_collection = mongo.cx['info']['price']
@@ -150,6 +151,116 @@ def get_all_history_top10():
 def get_top10_symbols():
     return jsonify(top10Crypto)
 
+
+###Statistics###
+newsSource = ["BBC", "NYTimes"]
+socialMedias=["X"]
+
+def calculate_growth_rate(today_count, yesterday_count):
+    if yesterday_count == 0:
+        return None if today_count == 0 else float('inf')  
+    return ((today_count - yesterday_count) / yesterday_count)
+
+def get_cryptocurrency_counts(collection, start_time, end_time):
+    query = {
+        "timestamp": {"$gte": start_time, "$lt": end_time}
+    }
+    documents = list(collection.find(query))
+    document_count = len(documents)
+    print(f"Documents found in range {start_time} to {end_time}: {document_count}")
+    crypto_counts = defaultdict(int)
+    for doc in documents:
+        for coin in doc.get("relatedCoins", []):
+            for symbol, count in coin.items():
+                crypto_counts[symbol] += 1
+    return crypto_counts
+
+###API Endpoints###
+@app.route('/statistics/growth_rate', methods=['GET'])
+def get_growth_rate():
+    end_time = int(datetime.now().timestamp())
+    start_today = end_time - 86400  # 24 hours ago
+    start_yesterday = end_time - 2 * 86400  # 48 hours ago
+
+    today_counts = defaultdict(int)
+    yesterday_counts = defaultdict(int)
+
+    for source in newsSource:
+        collection = mongo.cx['News'][source]
+        today_counts_source = get_cryptocurrency_counts(collection, start_today, end_time)
+        yesterday_counts_source = get_cryptocurrency_counts(collection, start_yesterday, start_today)
+
+        for symbol, count in today_counts_source.items():
+            today_counts[symbol] += count
+        for symbol, count in yesterday_counts_source.items():
+            yesterday_counts[symbol] += count
+
+    for source in socialMedias:
+        collection = mongo.cx['SocialMedia'][source]
+        today_counts_source = get_cryptocurrency_counts(collection, start_today, end_time)
+        yesterday_counts_source = get_cryptocurrency_counts(collection, start_yesterday, start_today)
+
+        for symbol, count in today_counts_source.items():
+            today_counts[symbol] += count
+        for symbol, count in yesterday_counts_source.items():
+            yesterday_counts[symbol] += count
+    
+    growth_rates = []
+    for symbol in top10Crypto:
+        today_count = today_counts[symbol]
+        yesterday_count = yesterday_counts[symbol]
+        growth_rate = calculate_growth_rate(today_count, yesterday_count)
+        growth_rates.append({symbol: growth_rate})
+
+    return jsonify(growth_rates)
+
+@app.route('/statistics/growth_rate_news/<news>', methods=['GET'])
+def get_growth_rate_news(news):
+    if news not in newsSource:
+        return jsonify({"error": "Invalid news source"}), 400
+    
+    end_time = int(datetime.now().timestamp())
+    start_today = end_time - 86400  # 24 hours ago
+    start_yesterday = end_time - 2 * 86400
+
+    collection = mongo.cx["News"][news]
+    today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
+    yesterday_counts = get_cryptocurrency_counts(collection, start_yesterday, start_today)
+
+    growth_rates = []
+    for symbol in top10Crypto:
+        today_count = today_counts[symbol]
+        yesterday_count = yesterday_counts[symbol]
+        growth_rate = calculate_growth_rate(today_count, yesterday_count)
+        growth_rates.append({symbol: growth_rate})
+
+    return jsonify(growth_rates)
+
+@app.route('/statistics/growth_rate_socialMedia/<media>', methods=['GET'])
+def get_growth_rate_socialMedia(media):
+    if media not in socialMedias:
+        return jsonify({"error": "Invalid socialMedia source"}), 400
+    
+    end_time = int(datetime.now().timestamp())
+    start_today = end_time - 86400  # 24 hours ago
+    start_yesterday = end_time - 2 * 86400
+
+    collection = mongo.cx["SocialMedia"][media]
+    today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
+    yesterday_counts = get_cryptocurrency_counts(collection, start_yesterday, start_today)
+
+    growth_rates = []
+    for symbol in top10Crypto:
+        today_count = today_counts[symbol]
+        yesterday_count = yesterday_counts[symbol]
+        growth_rate = calculate_growth_rate(today_count, yesterday_count)
+        growth_rates.append({symbol: growth_rate})
+
+    return jsonify(growth_rates)
+
+# @app.route('/statistics/bestMedia', methods=['GET'])
+# def get_best_media():
+#     return
 
 if __name__ == '__main__':
     #fetch_and_store_price()
