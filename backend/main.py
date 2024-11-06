@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import requests
 import json
 import time
+import numpy as np 
 from collections import defaultdict
 
 app = Flask(__name__)
@@ -175,6 +176,13 @@ def get_cryptocurrency_counts(collection, start_time, end_time):
                 crypto_counts[symbol] += 1
     return crypto_counts
 
+def cosine_similarity(vec1, vec2):
+    dot_product = np.dot(vec1, vec2)
+    norm_vec1 = np.linalg.norm(vec1)
+    norm_vec2 = np.linalg.norm(vec2)
+    if norm_vec1 == 0 or norm_vec2 == 0:
+        return 0
+    return dot_product / (norm_vec1 * norm_vec2)
 ###API Endpoints###
 @app.route('/statistics/growth_rate', methods=['GET'])
 def get_growth_rate():
@@ -258,9 +266,41 @@ def get_growth_rate_socialMedia(media):
 
     return jsonify(growth_rates)
 
-# @app.route('/statistics/bestMedia', methods=['GET'])
-# def get_best_media():
-#     return
+@app.route('/statistics/bestMedia', methods=['GET'])
+def get_best_media():
+    end_time = int(datetime.now().timestamp())
+    start_time = end_time - 86400 
+    social_media_collection = mongo.cx["SocialMedia"][socialMedias[0]]
+    social_counts = get_cryptocurrency_counts(social_media_collection, start_time, end_time)
+    social_vector = [social_counts.get(symbol, 0) for symbol in top10Crypto]
+
+    best_similarity = 0
+    best_source = None
+
+    for source in newsSource:
+        news_collection = mongo.cx["News"][source]
+        news_counts = get_cryptocurrency_counts(news_collection, start_time, end_time)
+        news_vector = [news_counts.get(symbol, 0) for symbol in top10Crypto]
+
+        similarity = cosine_similarity(social_vector, news_vector)
+        if similarity > best_similarity:
+            best_similarity = similarity
+            best_source = source
+    
+    if best_source:
+        news_collection = mongo.cx["News"][best_source]
+        articles = list(news_collection.find(
+            {"timestamp": {"$gte": start_time, "$lt": end_time}},
+            {"_id": 0, "headline": 1, "url": 1}
+        ))
+
+        return jsonify({
+            "best_source": best_source,
+            "similarity_score": best_similarity,
+            "articles": articles
+        })
+    else:
+        return jsonify({"error": "No matching news source found"}), 404
 
 if __name__ == '__main__':
     #fetch_and_store_price()
