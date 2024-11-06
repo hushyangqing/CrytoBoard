@@ -324,8 +324,18 @@ def get_article_count_and_word_frequency(collection, start_time, end_time):
 
 @app.route('/chart_data', methods=['GET'])
 def get_chart_data():
-    end_time = int(datetime.now().timestamp())
-    start_time = end_time - 86400  
+    start_time_str = request.args.get("start_time")
+    end_time_str = request.args.get("end_time")
+
+    if start_time_str and end_time_str:
+        try:
+            start_time = int(datetime.fromisoformat(start_time_str).timestamp())
+            end_time = int(datetime.fromisoformat(end_time_str).timestamp())
+        except ValueError:
+            return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
+    else:
+        end_time = int(datetime.now().timestamp())
+        start_time = end_time - 86400 
 
     chart_data = []
 
