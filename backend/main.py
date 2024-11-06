@@ -7,7 +7,7 @@ import requests
 import json
 import time
 import numpy as np 
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 app = Flask(__name__)
 CORS(app)
@@ -301,6 +301,59 @@ def get_best_media():
         })
     else:
         return jsonify({"error": "No matching news source found"}), 404
+
+###Chart###
+def get_article_count_and_word_frequency(collection, start_time, end_time):
+    query = {
+        "timestamp": {"$gte": start_time, "$lt": end_time}
+    }
+    documents = list(collection.find(query))
+    document_count = len(documents)
+    print(f"Documents found in range {start_time} to {end_time}: {document_count}")
+    article_count = defaultdict(int)
+    word_frequency = Counter()
+
+    for doc in documents:
+        for coin in doc.get("relatedCoins", []):
+            for symbol, count in coin.items():
+                if symbol in top10Crypto:
+                    article_count[symbol] += 1 
+                    word_frequency[symbol] += count
+    
+    return article_count, word_frequency
+
+@app.route('/chart_data', methods=['GET'])
+def get_chart_data():
+    end_time = int(datetime.now().timestamp())
+    start_time = end_time - 86400  
+
+    chart_data = []
+
+    for source in newsSource:
+        collection = mongo.cx["News"][source]
+        article_count, word_frequency = get_article_count_and_word_frequency(collection, start_time, end_time)
+
+        # Structure the data
+        source_data = {
+            source: {
+                "numberOfArticle": [{symbol: count} for symbol, count in article_count.items()],
+                "wordFrequency": dict(word_frequency)
+            }
+        }
+        chart_data.append(source_data)
+    for source in socialMedias:
+        collection = mongo.cx["SocialMedia"][source]
+        article_count, word_frequency = get_article_count_and_word_frequency(collection, start_time, end_time)
+
+        # Structure the data
+        source_data = {
+            source: {
+                "numberOfArticle": [{symbol: count} for symbol, count in article_count.items()],
+                "wordFrequency": dict(word_frequency)
+            }
+        }
+        chart_data.append(source_data)
+    return jsonify(chart_data)
 
 if __name__ == '__main__':
     #fetch_and_store_price()
