@@ -17,7 +17,7 @@ try:
     mongo = PyMongo(app)
 except Exception as e:
     print("MongoDB connection error:", e)
-scheduler = BackgroundScheduler()
+#scheduler = BackgroundScheduler()
 
 crytoCurrency = {'BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON', 'ADA', 'SHIB', 'AVAX', 'BCH', 'LINK', 'DOT', 'LEO', 'SUI', 'DAI', 'LTC'}
 nameMapping = {'Bitcoin':'BTC',
@@ -42,11 +42,12 @@ nameMapping = {'Bitcoin':'BTC',
                'Litecoin':'LTC'}
 
 crypto_history = {}
-
+top10Crypto = ['BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON']
 start_time = datetime.now()
 
+# price related
 def fetch_and_store_price():
-    global start_time, crypto_history
+    global start_time, crypto_history, top10Crypto
 
     # For testing, run this only for 10 minutes
     if datetime.now() > start_time + timedelta(minutes=10):
@@ -55,11 +56,10 @@ def fetch_and_store_price():
         store_history()
         return
 
-    # Fetch cryptocurrency data from CoinMarketCap API
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
         'start': '1',
-        'limit': '10',
+        'limit': '20',
         'convert': 'USD'
     }
     headers = {
@@ -73,6 +73,7 @@ def fetch_and_store_price():
         return
     
     data = response.json()
+    top10Crypto = [crypto['symbol'] for crypto in data['data'][:10]]
     price_collection = mongo.cx['info']['price']
     history_collection = mongo.cx['info']['history_price']
 
@@ -109,9 +110,47 @@ def store_history():
     print("Historical price data stored in MongoDB.")
     crypto_history.clear() 
 
-scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
-scheduler.start()
+#scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
+#scheduler.start()
+
+### API Endpoints###
+@app.route('/currentPrice/<symbol>', methods=['GET'])
+def get_price(symbol):
+    price_collection = mongo.cx['info']['price']
+    result = price_collection.find_one({"symbol": symbol.upper()})
+    if result:
+        result["_id"] = str(result["_id"])
+        return jsonify(result)
+    else:
+        return jsonify({"price": -1}), 404
+    
+@app.route('/top10_current_prices', methods=['GET'])
+def get_all_current_prices():
+    price_collection = mongo.cx['info']['price']
+    prices = price_collection.find({"symbol": {"$in": top10Crypto}})
+    return jsonify([{"symbol": price["symbol"], "price": price["price"]} for price in prices])
+
+@app.route('/historyPrice/<symbol>', methods=['GET'])
+def get_history(symbol):
+    history_collection = mongo.cx['info']['history_price']
+    result = history_collection.find_one({"symbol": symbol.upper()})
+    if result and "history" in result:
+        return jsonify(result["history"])
+    else:
+        return jsonify({"error": "No historical data found for this symbol"}), 404
+
+@app.route('/top10_historyPrice', methods=['GET'])
+def get_all_history_top10():
+    history_collection = mongo.cx['info']['history_price']
+    history_data = history_collection.find({"symbol": {"$in": top10Crypto}})
+    all_history = {doc["symbol"]: doc["history"] for doc in history_data}
+    return jsonify(all_history)
+
+@app.route('/top10_symbols', methods=['GET'])
+def get_top10_symbols():
+    return jsonify(top10Crypto)
+
 
 if __name__ == '__main__':
-    #fetch_and_store_price() unmark it in real case
+    #fetch_and_store_price()
     app.run(debug=True)
