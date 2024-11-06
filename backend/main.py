@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app)
 coinMarketkey='cd4615ad-0703-4d8d-8d23-5562769f50f6'
 # mongodb connection
-uri = "mongodb+srv://qyang:13868543625@cluster0.2n4bw.mongodb.net/?retryWrites=true&w=majority&appName=cluster0"
+uri = "mongodb+srv://qyang:13868543625Wu@cluster0.2n4bw.mongodb.net/?retryWrites=true&w=majority&appName=cluster0"
 app.config['MONGO_URI'] = uri
 try:
     mongo = PyMongo(app)
@@ -364,6 +364,55 @@ def get_chart_data():
         }
         chart_data.append(source_data)
     return jsonify(chart_data)
+
+###News Search###
+@app.route('/news/search', methods=['GET'])
+def search_news():
+    crypto_name = request.args.get('crypto_name')
+    start_time_str = request.args.get('start_time')
+    end_time_str = request.args.get('end_time')
+
+    if not crypto_name:
+        return jsonify({"error": "Please provide a cryptocurrency name"}), 400
+    crypto_name_lower = crypto_name.strip().lower()
+    crypto_symbol = None
+
+    for name, symbol in nameMapping.items():
+        if name.lower() == crypto_name_lower or symbol.lower()==crypto_name_lower:
+            crypto_symbol = symbol
+            break
+    if not crypto_symbol:
+        return jsonify({"error": "Cryptocurrency not found"}), 404
+    
+    if start_time_str and end_time_str:
+        try:
+            start_time = int(datetime.fromisoformat(start_time_str).timestamp())
+            end_time = int(datetime.fromisoformat(end_time_str).timestamp())
+        except ValueError:
+            return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
+    else:
+        end_time = int(datetime.now().timestamp())
+        start_time = end_time - 86400 
+
+    results = []
+    for source in newsSource:
+        collection = mongo.cx["News"][source]
+        articles = list(collection.find(
+            {   "timestamp": {"$gte": start_time, "$lt": end_time},
+                "relatedCoins": {"$elemMatch": {crypto_symbol: {"$exists": True}}}
+            },
+            {"_id": 0, "headline": 1, "url": 1, "timestamp": 1}
+        ))
+
+        for article in articles:
+            article['source'] = source  
+            results.append(article)
+
+    results.sort(key=lambda x: x['timestamp'], reverse=True)
+    if not results:
+        return jsonify({"message": f"No articles found for {crypto_name}"}), 404
+
+    return jsonify(results)
 
 if __name__ == '__main__':
     #fetch_and_store_price()
