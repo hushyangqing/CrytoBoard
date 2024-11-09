@@ -1,0 +1,36 @@
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin-left: 2vw;
+}
+
+.App-title {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.App-mediaTrends {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab {
+  color: black;
+  font-weight: normal;
+  font-size: calc(10px + 1vw);
+  margin: 60px 40px;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
+.tab-strong {
+  color: black;
+  font-weight: bold;
+  font-size: calc(10px + 1vw);
+  margin: 60px 40px;
+}
+
