@@ -130,14 +130,20 @@ def get_price(symbol):
 def get_all_current_prices():
     price_collection = mongo.cx['info']['price']
     prices = price_collection.find({"symbol": {"$in": top10Crypto}})
-    return jsonify([{"symbol": price["symbol"], "price": price["price"]} for price in prices])
+    return jsonify([{"symbol": price["symbol"], "price": price["price"], "name":price["name"]} for price in prices])
 
+#[[time, price], [time,price]] time to unix format
 @app.route('/historyPrice/<symbol>', methods=['GET'])
 def get_history(symbol):
     history_collection = mongo.cx['info']['history_price']
     result = history_collection.find_one({"symbol": symbol.upper()})
     if result and "history" in result:
-        return jsonify(result["history"])
+        formatted_history = []
+        for entry in result["history"]:
+            unix_time = int(datetime.fromisoformat(entry["timestamp"].replace("Z", "+00:00")).timestamp())
+            formatted_history.append([unix_time, entry["price"]])
+        
+        return jsonify(formatted_history)
     else:
         return jsonify({"error": "No historical data found for this symbol"}), 404
 
@@ -266,10 +272,11 @@ def get_growth_rate_socialMedia(media):
 
     return jsonify(growth_rates)
 
+#array of headline
 @app.route('/statistics/bestMedia', methods=['GET'])
 def get_best_media():
     end_time = int(datetime.now().timestamp())
-    start_time = end_time - 86400 
+    start_time = end_time - 86400*10
     social_media_collection = mongo.cx["SocialMedia"][socialMedias[0]]
     social_counts = get_cryptocurrency_counts(social_media_collection, start_time, end_time)
     social_vector = [social_counts.get(symbol, 0) for symbol in top10Crypto]
@@ -287,17 +294,21 @@ def get_best_media():
             best_similarity = similarity
             best_source = source
     
+    headlines=[]
     if best_source:
         news_collection = mongo.cx["News"][best_source]
         articles = list(news_collection.find(
             {"timestamp": {"$gte": start_time, "$lt": end_time}},
             {"_id": 0, "headline": 1, "url": 1}
         ))
+        for article in articles:
+            if 'headline' in article:
+                headlines.append(article['headline'])
 
         return jsonify({
             "best_source": best_source,
             "similarity_score": best_similarity,
-            "articles": articles
+            "articles": headlines
         })
     else:
         return jsonify({"error": "No matching news source found"}), 404
