@@ -9,6 +9,8 @@ pip install Flask flask_pymongo apscheduler requests
 
 pip install numpy
 
+python main.py
+
 # frontend: TypeScript React
 
 ### `npm start`
