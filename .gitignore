@@ -1,0 +1,17 @@
+# Ignore node modules and build folder in frontend
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+
+# Ignore Python virtual environment and __pycache__ in backend
+backend/.venv/
+backend/__pycache__/
+
+# Ignore common temporary or generated files
+*.log
+*.cache
+*.pyc
+.DS_Store
+
+# Ignore editor or OS-specific files
+*.swp

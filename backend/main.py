@@ -426,5 +426,6 @@ def search_news():
     return jsonify(results)
 
 if __name__ == '__main__':
-    #fetch_and_store_price()
-    app.run(debug=True)
+    # fetch_and_store_price()
+    # app.run(debug=True)
+    app.run(debug=False)
