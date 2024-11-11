@@ -15,3 +15,10 @@ backend/__pycache__/
 
 # Ignore editor or OS-specific files
 *.swp
+
+#ignore node_modules in root
+node_modules/
+
+#ignore package.json
+package-lock.json
+package.json
