@@ -172,12 +172,13 @@ function Chart() {
                 }
             }
         };
-    }, []);
+    }, [mockData]);
     // }, [chartData]); 
 
     useEffect(() => {
         updateChart();
-    }, [activeTab, chartData]);
+    }, [activeTab, mockData]);
+    // }, [activeTab, chartData]);
 
     const handleTabClick = (tab: 'articles' | 'frequency') => {
         setActiveTab(tab);
