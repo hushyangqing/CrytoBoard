@@ -143,7 +143,8 @@ function Chart() {
     };
 
     const createChart = () => {
-        if (chartContainer.current && !chartInstance.current && chartData.length > 0) {
+        // if (chartContainer.current && !chartInstance.current && chartData.length > 0) {
+        if (chartContainer.current && !chartInstance.current && mockData.length > 0) {
             // const options = transformData(chartData, activeTab);
             const options = transformData(mockData, activeTab);
             chartInstance.current = Highcharts.chart(chartContainer.current, options);
@@ -151,11 +152,13 @@ function Chart() {
     };
 
     const updateChart = () => {
-        if (chartInstance.current && chartData.length > 0) {
+        // if (chartInstance.current && chartData.length > 0) {
+        if (chartInstance.current && mockData.length > 0) {
             // const options = transformData(chartData, activeTab);
             const options = transformData(mockData, activeTab);
             chartInstance.current.update(options, true, true);
-        } else if (chartData.length > 0) {
+        // } else if (chartData.length > 0) {
+        } else if (mockData.length > 0) {    
             createChart();
         }
     };
@@ -201,7 +204,8 @@ function Chart() {
                 </button>
             </div>
             <div ref={chartContainer} className="chart-content">
-                {chartData.length === 0 && <div className="loading">Loading chart data...</div>}
+                {/* {chartData.length === 0 && <div className="loading">Loading chart data...</div>} */}
+                {mockData.length === 0 && <div className="loading">Loading chart data...</div>}
             </div>
         </div>
     );
