@@ -44,7 +44,7 @@ function Price() {
                     .then(response => setHistory(prevHistory => ({
                         ...prevHistory,
                         [crypto.symbol]: [
-                            ...prevHistory[crypto.symbol],
+                            ...(prevHistory[crypto.symbol] || []),
                             [new Date().getTime(), response.data.price]
                         ]
                     })))
