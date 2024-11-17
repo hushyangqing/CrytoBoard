@@ -9,62 +9,40 @@ function Chart() {
     const chartInstance = useRef<Highcharts.Chart | null>(null);
     const [chartData, setChartData] = useState<any[]>([]);
 
-    // MOCK DATA
-    const mockData = [
-        {
-            "BBC": {
-                "numberOfArticle": [
-                    {"BTC": 12}, {"ETH": 8}, {"USDT": 3}, {"BNB": 4}, 
-                    {"SOL": 7}, {"USDC": 2}, {"XRP": 5}, {"DOGE": 6}, 
-                    {"TRX": 2}, {"TON": 1}
-                ],
-                "wordFrequency": {
-                    "BTC": 45, "ETH": 28, "USDT": 8, "BNB": 12,
-                    "SOL": 25, "USDC": 4, "XRP": 15, "DOGE": 22,
-                    "TRX": 5, "TON": 2
-                }
-            }
-        },
-        {
-            "NYTimes": {
-                "numberOfArticle": [
-                    {"BTC": 15}, {"ETH": 10}, {"USDT": 2}, {"BNB": 3},
-                    {"SOL": 8}, {"USDC": 1}, {"XRP": 4}, {"DOGE": 7},
-                    {"TRX": 1}, {"TON": 2}
-                ],
-                "wordFrequency": {
-                    "BTC": 52, "ETH": 35, "USDT": 5, "BNB": 9,
-                    "SOL": 30, "USDC": 2, "XRP": 12, "DOGE": 28,
-                    "TRX": 3, "TON": 4
-                }
-            }
-        },
-        {
-            "X": {
-                "numberOfArticle": [
-                    {"BTC": 150}, {"ETH": 120}, {"USDT": 45}, {"BNB": 60},
-                    {"SOL": 95}, {"USDC": 30}, {"XRP": 70}, {"DOGE": 85},
-                    {"TRX": 25}, {"TON": 20}
-                ],
-                "wordFrequency": {
-                    "BTC": 480, "ETH": 350, "USDT": 120, "BNB": 180,
-                    "SOL": 285, "USDC": 75, "XRP": 210, "DOGE": 255,
-                    "TRX": 65, "TON": 45
-                }
-            }
-        }
-    ];
+    const formatDateTime = (date: Date): string => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        
+        return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+    };
 
-    // Fetch data from backend
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/chart_data')
-            .then(response => {
-                setChartData(response.data);
-                updateChart();
-            })
-            .catch(error => {
-                console.error('Error fetching chart data:', error);
-            });
+        const endTime = new Date();
+        const startTime = new Date(endTime.getTime() - (24 * 60 * 60 * 1000)); // 24 hours ago
+        
+        // USES MOCK START TIME
+        const mockStartTimeStr = "2023-11-01T00:00:00"
+        const startTimeStr = formatDateTime(startTime);
+        const endTimeStr = formatDateTime(endTime);
+    
+        axios.get(`http://127.0.0.1:5000/chart_data`, {
+            params: {
+                // Replace with startTimeStr to get last 24 hours data
+                start_time: mockStartTimeStr,
+                end_time: endTimeStr
+            }
+        })
+        .then(response => {
+            setChartData(response.data);
+            updateChart();
+        })
+        .catch(error => {
+            console.error('Error fetching chart data:', error);
+        });
     }, []);
 
     const transformData = (rawData: any[], type: 'articles' | 'frequency'): Highcharts.Options => {
@@ -143,22 +121,17 @@ function Chart() {
     };
 
     const createChart = () => {
-        // if (chartContainer.current && !chartInstance.current && chartData.length > 0) {
-        if (chartContainer.current && !chartInstance.current && mockData.length > 0) {
-            // const options = transformData(chartData, activeTab);
-            const options = transformData(mockData, activeTab);
+        if (chartContainer.current && !chartInstance.current && chartData.length > 0) {
+            const options = transformData(chartData, activeTab);
             chartInstance.current = Highcharts.chart(chartContainer.current, options);
         }
     };
 
     const updateChart = () => {
-        // if (chartInstance.current && chartData.length > 0) {
-        if (chartInstance.current && mockData.length > 0) {
-            // const options = transformData(chartData, activeTab);
-            const options = transformData(mockData, activeTab);
+        if (chartInstance.current && chartData.length > 0) {
+            const options = transformData(chartData, activeTab);
             chartInstance.current.update(options, true, true);
-        // } else if (chartData.length > 0) {
-        } else if (mockData.length > 0) {    
+        } else if (chartData.length > 0) {
             createChart();
         }
     };
@@ -175,13 +148,11 @@ function Chart() {
                 }
             }
         };
-    }, [mockData]);
-    // }, [chartData]); 
+    }, [chartData]); 
 
     useEffect(() => {
         updateChart();
-    }, [activeTab, mockData]);
-    // }, [activeTab, chartData]);
+    }, [activeTab, chartData]);
 
     const handleTabClick = (tab: 'articles' | 'frequency') => {
         setActiveTab(tab);
@@ -204,8 +175,7 @@ function Chart() {
                 </button>
             </div>
             <div ref={chartContainer} className="chart-content">
-                {/* {chartData.length === 0 && <div className="loading">Loading chart data...</div>} */}
-                {mockData.length === 0 && <div className="loading">Loading chart data...</div>}
+                {chartData.length === 0 && <div className="loading">Loading chart data...</div>}
             </div>
         </div>
     );
