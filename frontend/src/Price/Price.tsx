@@ -13,6 +13,17 @@ interface HistoryData {
     [key: string]: [number, number][];
 }
 
+
+const getCryptoIcon = (cryptoName: string): string => {
+    try {
+        // Dynamically import the icon based on the crypto name
+        return require(`../icons/${cryptoName}.png`);
+    } catch (error) {
+        // Fallback to default icon if not found
+        return require('../icons/default.png');
+    }
+};
+
 function Price() {
     // State to hold price data
     const [prices, setPrices] = useState<CryptoData[]>([]);
@@ -104,20 +115,31 @@ function Price() {
     return (
         <div>
             <h2>Top 10 Cryptocurrency Prices</h2>
-            <table>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
-                    <tr>
-                        <th>Number</th>
-                        <th>Crypto Name</th>
-                        <th>Crypto Price</th>
-                        <th>Last 24h Graph</th>
+                <tr>
+                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Number</th>
+                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Crypto</th>
+                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Crypto Price</th>
+                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Last 24h Graph</th>
                     </tr>
                 </thead>
                 <tbody>
                     {prices.map((crypto, index) => (
                         <tr key={crypto.symbol}>
                             <td>{index + 1}</td>
-                            <td>{crypto.name}</td>
+                            <td>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <img
+                                        src={getCryptoIcon(crypto.name)}
+                                        alt={`${crypto.name} icon`}
+                                        width="24"
+                                        height="24"
+                                        onError={(e) => (e.currentTarget.src = require('../icons/default.png'))}
+                                    />
+                                    <span>{crypto.name}</span>
+                                </div>
+                            </td>                            
                             <td>${crypto.price.toFixed(2)}</td>
                             <td>
                                 {history[crypto.symbol] ? (
