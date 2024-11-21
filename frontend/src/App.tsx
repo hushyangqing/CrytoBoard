@@ -3,6 +3,7 @@ import './App.css';
 import Price from "./Price/Price";
 import Chart from "./MediaTrends/Chart";
 import BestNews from "./MediaTrends/BestNews";
+import News from "./Price/News";
 import {useState} from "react";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         </div>
       </div>
       {tab === 'price' && <Price/>}
+      {tab === 'price' && <News crypto='BTC'/>}
       {tab === 'mediaTrends' && <div className="App-mediaTrends">
         <BestNews />
         <Chart />

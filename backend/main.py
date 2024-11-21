@@ -8,6 +8,7 @@ import json
 import time
 import numpy as np 
 from collections import defaultdict, Counter
+import certifi
 
 app = Flask(__name__)
 CORS(app)
@@ -16,7 +17,7 @@ coinMarketkey='cd4615ad-0703-4d8d-8d23-5562769f50f6'
 uri = "mongodb+srv://qyang:13868543625Wu@cluster0.2n4bw.mongodb.net/?retryWrites=true&w=majority&appName=cluster0"
 app.config['MONGO_URI'] = uri
 try:
-    mongo = PyMongo(app)
+    mongo = PyMongo(app, tlsCAFile=certifi.where())
 except Exception as e:
     print("MongoDB connection error:", e)
 #scheduler = BackgroundScheduler()
@@ -403,7 +404,7 @@ def search_news():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400 
+        start_time = end_time - 86400 * 20
 
     results = []
     for source in newsSource:

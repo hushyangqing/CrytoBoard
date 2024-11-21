@@ -31,7 +31,7 @@ function Price() {
             const oneDayAgo = new Date();
             oneDayAgo.setDate(oneDayAgo.getDate() - 1);
             const timestamp = oneDayAgo.toISOString();
-    
+            // console.log(timestamp);
             prices.forEach(crypto => {
                 axios.get(`http://127.0.0.1:5000/historyPrice/${crypto.symbol}?since=${timestamp}`)
                     .then(response => setHistory(prevHistory => ({
