@@ -178,7 +178,7 @@ def get_cryptocurrency_counts(collection, start_time, end_time):
     print(f"Documents found in range {start_time} to {end_time}: {document_count}")
     crypto_counts = defaultdict(int)
     for doc in documents:
-        for coin in doc.get("relatedCoins", []):
+        for coin in doc.get("crypto_counts", []):
             for symbol, count in coin.items():
                 crypto_counts[symbol] += 1
     return crypto_counts
@@ -326,7 +326,7 @@ def get_article_count_and_word_frequency(collection, start_time, end_time):
     word_frequency = Counter()
 
     for doc in documents:
-        for coin in doc.get("relatedCoins", []):
+        for coin in doc.get("crypto_counts", []):
             for symbol, count in coin.items():
                 if symbol in top10Crypto:
                     article_count[symbol] += 1 
@@ -411,9 +411,9 @@ def search_news():
         collection = mongo.cx["News"][source]
         articles = list(collection.find(
             {   "timestamp": {"$gte": start_time, "$lt": end_time},
-                "relatedCoins": {"$elemMatch": {crypto_symbol: {"$exists": True}}}
+                "crypto_counts": {"$elemMatch": {crypto_symbol: {"$exists": True}}}
             },
-            {"_id": 0, "headline": 1, "url": 1, "timestamp": 1}
+            {"_id": 0, "headline": 1, "url": 1, "timestamp": 1, "image_url":1}
         ))
 
         for article in articles:
