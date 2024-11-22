@@ -160,7 +160,7 @@ def get_top10_symbols():
 
 
 ###Statistics###
-newsSource = ["BBC", "NYTimes"]
+newsSource = ["Fox", "NYTimes"]
 socialMedias=["X"]
 
 def calculate_growth_rate(today_count, yesterday_count):
@@ -323,13 +323,13 @@ def get_article_count_and_word_frequency(collection, start_time, end_time):
     print(f"Documents found in range {start_time} to {end_time}: {document_count}")
     article_count = defaultdict(int)
     word_frequency = Counter()
-
+    
     for doc in documents:
-        for coin in doc.get("crypto_counts", []):
-            for symbol, count in coin.items():
-                if symbol in top10Crypto:
-                    article_count[symbol] += 1 
-                    word_frequency[symbol] += count
+        crypto_counts = doc.get("crypto_counts", {})
+        for symbol, count in crypto_counts.items():
+            if symbol in top10Crypto:
+                article_count[symbol] += 1 
+                word_frequency[symbol] += count
     
     return article_count, word_frequency
 
@@ -346,14 +346,13 @@ def get_chart_data():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400 
+        start_time = end_time - 86400*120
 
     chart_data = []
 
     for source in newsSource:
         collection = mongo.cx["News"][source]
         article_count, word_frequency = get_article_count_and_word_frequency(collection, start_time, end_time)
-
         # Structure the data
         source_data = {
             source: {
@@ -365,7 +364,6 @@ def get_chart_data():
     for source in socialMedias:
         collection = mongo.cx["SocialMedia"][source]
         article_count, word_frequency = get_article_count_and_word_frequency(collection, start_time, end_time)
-
         # Structure the data
         source_data = {
             source: {
@@ -403,14 +401,17 @@ def search_news():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400 
+        start_time = end_time - 86400*60
+        print(start_time)
+
 
     results = []
     for source in newsSource:
         collection = mongo.cx["News"][source]
+        print(len(list(collection.find({ "timestamp": {"$gte": start_time, "$lt": end_time}}))))
         articles = list(collection.find(
             {   "timestamp": {"$gte": start_time, "$lt": end_time},
-                "crypto_counts": {"$elemMatch": {crypto_symbol: {"$exists": True}}}
+                f"crypto_counts.{crypto_symbol}": {"$exists": True}
             },
             {"_id": 0, "headline": 1, "url": 1, "timestamp": 1, "image_url":1}
         ))
@@ -421,7 +422,7 @@ def search_news():
 
     results.sort(key=lambda x: x['timestamp'], reverse=True)
     if not results:
-        return jsonify({"message": f"No articles found for {crypto_name}"}), 404
+        return jsonify({"message": f"No articles found for {crypto_name}, {crypto_symbol}"}), 404
 
     return jsonify(results)
 
