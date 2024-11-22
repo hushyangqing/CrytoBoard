@@ -18,47 +18,101 @@
     border: 2px solid darkgreen;
     background-color: white;
     border-radius: 15px;
-    padding: 10px;
+    padding: 5vw 10px 10px 10px;
     box-sizing: border-box;
     overflow-y: scroll;
 }
 
+.titleBackground {
+    background-color: white;
+    position: fixed;
+    top: calc(20% + 2px);
+    left: calc(30% + 2px);
+    width: calc(40% - 4px);
+    height: calc(5vw);
+    border-radius: 15px;
+    z-index: 8;
+}
+
 .newsTitle {
+    position: fixed;
+    top: calc(20% + 2px);
+    left: 30%;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    /*box-sizing: border-box;*/
+    background-color: white;
+    width: 38%;
+    height: 3vw;
+    z-index: 10;
+    text-align: left;
+    font-size: calc(1vw);
+    margin-left: 12px;
+    padding-bottom: 7px;
+    /*padding-top: 3px;*/
+    /*border: 1px solid black;*/
 }
 
 .newsTitleName {
     text-align: left;
     font-weight: bold;
     font-size: calc(10px + 1vw);
+    margin-left: 2px;
 }
-.newsTitle {
+
+.newsTitleCrypto {
     text-align: left;
-    font-size: calc(1vw);
+    font-size: 1vw;
     margin-left: 10px;
-    margin-bottom: 2px;
+}
+
+.close {
+    position: fixed;
+    top: 22%;
+    left: 68%;
+    z-index: 12;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
 }
 
 .divider {
     background-color: rgba(0, 0, 0, 0.5);
     height: 2px;
-    width: 100%;
+    width: 38%;
     margin: 1vw 0;
+    position: fixed;
+    top: calc(25%);
+    z-index: 11;
 }
 
 .dividerSub {
     background-color: rgba(0, 0, 0, 0.3);
     height: 1px;
-    width: 100%;
+    width: 96%;
     margin: 1vw 0;
 }
 
+.wholePiece {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsImage {
+    width: 4vw;
+    height: auto;
+    margin: 3px 3px 23px 3px;
+    /*border: 5px solid darkgreen;*/
+}
 
 .singlePiece {
     display: flex;
     flex-direction: column;
+    width: calc(100% - 4vw);
+    /*border: 5px solid darkgreen;*/
 }
 
 .singlePieceTitle {

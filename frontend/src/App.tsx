@@ -31,7 +31,7 @@ function App() {
         </div>
       </div>
       {tab === 'price' && <Price/>}
-      {/*{tab === 'price' && <News crypto='BTC'/>}*/}
+      {tab === 'price' && <News crypto='ETH'/>}
       {tab === 'mediaTrends' && <div className="App-mediaTrends">
         <BestNews />
         <Chart />
