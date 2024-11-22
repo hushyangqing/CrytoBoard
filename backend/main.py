@@ -404,7 +404,7 @@ def search_news():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400 * 20
+        start_time = end_time - 86400 * 60
 
     results = []
     for source in newsSource:
