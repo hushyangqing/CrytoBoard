@@ -405,13 +405,13 @@ def search_news():
     else:
         end_time = int(datetime.now().timestamp())
         start_time = end_time - 86400*60
-        print(start_time)
+        # print(start_time)
 
 
     results = []
     for source in newsSource:
         collection = mongo.cx["News"][source]
-        print(len(list(collection.find({ "timestamp": {"$gte": start_time, "$lt": end_time}}))))
+        # print(len(list(collection.find({ "timestamp": {"$gte": start_time, "$lt": end_time}}))))
         articles = list(collection.find(
             {   "timestamp": {"$gte": start_time, "$lt": end_time},
                 f"crypto_counts.{crypto_symbol}": {"$exists": True}

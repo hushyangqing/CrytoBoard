@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
+import {Context} from "../App";
 
 interface CryptoData {
     name: string;
@@ -28,6 +29,13 @@ function Price() {
     // State to hold price data
     const [prices, setPrices] = useState<CryptoData[]>([]);
     const [history, setHistory] = useState<HistoryData>({});
+    const context = useContext(Context);
+
+    if (!context) {
+        throw new Error('useContext must be used within a Provider');
+    }
+
+    const { setShowPop } = context;
 
     // Fetch price data from the backend on component mount
     useEffect(() => {
@@ -126,7 +134,7 @@ function Price() {
                 </thead>
                 <tbody>
                     {prices.map((crypto, index) => (
-                        <tr key={crypto.symbol}>
+                        <tr key={crypto.symbol} onClick={() => {setShowPop(crypto.symbol)}}>
                             <td>{index + 1}</td>
                             <td>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

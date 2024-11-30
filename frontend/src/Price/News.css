@@ -74,6 +74,7 @@
     z-index: 12;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .divider {
@@ -102,25 +103,30 @@
 }
 
 .newsImage {
-    width: 4vw;
+    width: 5vw;
     height: auto;
     margin: 3px 3px 23px 3px;
-    /*border: 5px solid darkgreen;*/
 }
 
 .singlePiece {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 4vw);
-    /*border: 5px solid darkgreen;*/
+    width: calc(100% - 5vw);
 }
 
 .singlePieceTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+    word-break: break-word;
+}
+.singlePieceTitle a {
+    font-size: 1vw;
+    font-weight: bold;
+    color: inherit;
+}
+.singlePieceTitle a:hover {
+    color: blue;
 }
 
 .singlePieceContent {
+    margin-top: 2px;
     font-size: calc(1vw - 4px);
 }

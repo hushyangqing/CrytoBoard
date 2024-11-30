@@ -46,7 +46,7 @@ function Chart() {
     }, []);
 
     const transformData = (rawData: any[], type: 'articles' | 'frequency'): Highcharts.Options => {
-        const sources = ['BBC', 'NYTimes', 'X'];
+        const sources = ['Fox', 'NYTimes', 'X'];
         const cryptos = ['BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON'];
         
         const series = sources.map(source => {

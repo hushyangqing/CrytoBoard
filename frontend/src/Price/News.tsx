@@ -1,6 +1,7 @@
 import './News.css'
 import axios from "axios";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext, useMemo} from "react";
+import {Context} from "../App";
 
 interface NewsProps {
     crypto: string
@@ -12,6 +13,7 @@ interface NewsState {
     timestamp: number;
     url: string;
     image_url: string;
+    title: string;
 }
 
 const nameMapping: { [key: string]: string } = {'BTC': 'Bitcoin',
@@ -39,11 +41,19 @@ function News({crypto}: NewsProps): JSX.Element {
 
     const [news, setNews] = useState<NewsState[]>([])
 
+    const context = useContext(Context);
+
+    if (!context) {
+        throw new Error('No context provided');
+    }
+
+    const { setShowPop } = context;
+
     useEffect(() => {
         axios.get(`http://127.0.0.1:5000/news/search?crypto_name=${crypto}`)
             .then(response => setNews(response.data))
             .catch(error => console.error(`Error fetching news for ${crypto}:`, error));
-    }, [crypto]);
+    }, []);
 
     const singlePiece = (data: NewsState) => {
         const date = new Date(data.timestamp * 1000);
@@ -55,11 +65,12 @@ function News({crypto}: NewsProps): JSX.Element {
         });
 
         return <div className="wholePiece">
-            <img className="newsImage" src={data.image_url} alt="img"/>
+            <img className="newsImage" src={data.image_url || '/defaultNews.png'} alt="img"/>
             <div className="singlePiece">
                 <div className="singlePieceTitle">
-                    <div style={{fontSize: "1vw", fontWeight: "bold"}}>{formattedDate}</div>
-                    <div style={{ fontSize: "calc(1vw - 5px)"}}>from {data.source}</div>
+                    <a href={data.url}>{data.title}</a>
+                    <span style={{fontSize: "calc(1vw - 5px)", fontWeight: "bold", marginLeft: "4px"}}>{formattedDate}</span>
+                    <span style={{fontSize: "calc(1vw - 5px)", marginLeft: "4px"}}>from {data.source}</span>
                 </div>
                 <div className="singlePieceContent">{data.headline}</div>
                 <div className="dividerSub"/>
@@ -68,17 +79,21 @@ function News({crypto}: NewsProps): JSX.Element {
     }
 
     return (<div className="background">
-        <div className="newsBox">
+    <div className="newsBox">
             <div className="newsTitle">
                 <div className="newsTitleName">Top News of {nameMapping[crypto]}</div>
                 <div className="newsTitleCrypto">{crypto}</div>
-                <div className="close">X</div>
+                <div className="close" onClick={() => setShowPop(undefined)}>X</div>
             </div>
             <div className="titleBackground"/>
             <div className="divider"/>
             {news.map((data) => singlePiece(data))}
         </div>
-    </div>)
+    </div>);
 }
 
-export default News;
+function areEqual(prevProps: { crypto: any; }, nextProps: { crypto: any; }) {
+    return prevProps.crypto === nextProps.crypto;
+}
+
+export default React.memo(News, areEqual);
