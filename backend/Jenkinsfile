@@ -123,7 +123,8 @@ pipeline {
                         sh '''
                             curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
                             chmod +x kubectl
-                            
+                            mv kubectl /usr/local/bin/
+
                             aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${AWS_REGION}
                             
                             echo "Checking deployment status..."
