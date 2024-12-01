@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import {Context} from "../App";
+import "./Price.css"
 
 interface CryptoData {
     name: string;
@@ -14,6 +15,11 @@ interface HistoryData {
     [key: string]: [number, number][];
 }
 
+interface GrowthRateData {
+    [key: string]: any;
+}
+
+const host = "http://a9cdaab46934f4d9086910bcff2591e3-261144523.us-west-1.elb.amazonaws.com/"
 
 const getCryptoIcon = (cryptoName: string): string => {
     try {
@@ -29,6 +35,7 @@ function Price() {
     // State to hold price data
     const [prices, setPrices] = useState<CryptoData[]>([]);
     const [history, setHistory] = useState<HistoryData>({});
+    const [growthRate, setGrowthRate] = useState<GrowthRateData>({});
     const context = useContext(Context);
 
     if (!context) {
@@ -39,9 +46,20 @@ function Price() {
 
     // Fetch price data from the backend on component mount
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/top10_current_prices')
+        axios.get(`${host}top10_current_prices`)
             .then(response => setPrices(response.data))
             .catch(error => console.error('Error fetching price data:', error));
+        axios.get(`${host}statistics/growth_rate`)
+            .then(response => {
+               let res: Record<string, string> = {};
+               response.data.forEach((item: Record<string, string>) => {
+                   for (let key in item) {
+                       res[key] = item[key];
+                   }
+               })
+               setGrowthRate(res);
+            })
+            .catch(error => console.error('Error fetching growth rate data:', error));
     }, []);
 
     // Fetch last 24h price data for each cryptocurrency
@@ -52,14 +70,14 @@ function Price() {
             const timestamp = oneDayAgo.toISOString();
             // console.log(timestamp);
             prices.forEach(crypto => {
-                axios.get(`http://127.0.0.1:5000/historyPrice/${crypto.symbol}?since=${timestamp}`)
+                axios.get(`${host}historyPrice/${crypto.symbol}?since=${timestamp}`)
                     .then(response => setHistory(prevHistory => ({
                         ...prevHistory,
                         [crypto.symbol]: response.data
                     })))
                     .catch(error => console.error(`Error fetching history data for ${crypto.symbol}:`, error));
     
-                axios.get(`http://127.0.0.1:5000/currentPrice/${crypto.symbol}`)
+                axios.get(`${host}currentPrice/${crypto.symbol}`)
                     .then(response => setHistory(prevHistory => ({
                         ...prevHistory,
                         [crypto.symbol]: [
@@ -107,12 +125,14 @@ function Price() {
     const chartOptions = {
         scales: {
             x: {
-                display: true,
+                display: false,
             },
             y: {
                 display: false,
             },
         },
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: false,
@@ -120,41 +140,58 @@ function Price() {
         },
     };
 
+    const showGrowthRate = (data: string) => {
+        if (data === 'Infinite')
+            return "🔥"
+        if (data === 'None')
+            return "-"
+        return data
+    }
+
     return (
-        <div>
-            <h2>Top 10 Cryptocurrency Prices</h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="price">
+            <h2>Top 10 Trending Cryptocurrencies</h2>
+            <table style={{ width: "100%", borderCollapse: 'collapse', marginTop: '2vw' }}>
                 <thead>
-                <tr>
-                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Number</th>
-                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Crypto</th>
-                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Crypto Price</th>
-                        <th style={{ textAlign: 'left', padding: '10px 20px' }}>Last 24h Graph</th>
+                    <tr>
+                        <th style={{textAlign: 'center', padding: '10px 20px', width: "4vw", borderBottom: "1px solid black"}}># Rank</th>
+                        <th style={{textAlign: 'center', padding: '10px 20px', width: "4vw", borderBottom: "1px solid black"}}>Crypto</th>
+                        <th style={{textAlign: 'center', padding: '10px 20px', width: "10vw", borderBottom: "1px solid black"}}>Grow Rate of Popularity</th>
+                        <th style={{textAlign: 'center', padding: '10px 20px', width: "4vw", borderBottom: "1px solid black"}}>Price</th>
+                        <th style={{textAlign: 'center', padding: '10px 20px', width: "15vw", borderBottom: "1px solid black"}}>Price Trend</th>
                     </tr>
                 </thead>
                 <tbody>
                     {prices.map((crypto, index) => (
-                        <tr key={crypto.symbol} onClick={() => {setShowPop(crypto.symbol)}}>
-                            <td>{index + 1}</td>
+                        <tr key={crypto.symbol}
+                            onClick={() => {
+                                setShowPop(crypto.symbol);
+                                console.log("clicked: ", crypto.symbol);
+                            }
+                        }>
+                            <td style={{textAlign: "center"}}>{index + 1}</td>
                             <td>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                     <img
                                         src={getCryptoIcon(crypto.name)}
                                         alt={`${crypto.name} icon`}
-                                        width="24"
-                                        height="24"
+                                        width="24px"
+                                        height="24px"
                                         onError={(e) => (e.currentTarget.src = require('../icons/default.png'))}
                                     />
                                     <span>{crypto.name}</span>
                                 </div>
-                            </td>                            
-                            <td>${crypto.price.toFixed(2)}</td>
-                            <td>
-                                {history[crypto.symbol] ? (
-                                    <Line data={getChartData(crypto.symbol)} options={chartOptions}/>
-                                ) : (
-                                    'Loading...'
-                                )}
+                            </td>
+                            <td style={{textAlign: "center"}}>{showGrowthRate(growthRate[crypto.symbol])}</td>
+                            <td style={{textAlign: "center"}}>${crypto.price.toFixed(2)}</td>
+                            <td style={{ display: "flex", justifyContent: 'center'}}>
+                                <div style={{ width:'25vw', height: '15vh', display: "block"}}>
+                                    {history[crypto.symbol] ? (
+                                        <Line data={getChartData(crypto.symbol)} options={chartOptions}/>
+                                    ) : (
+                                        'Loading...'
+                                    )}
+                                </div>
                             </td>
                         </tr>
                     ))}
@@ -165,3 +202,4 @@ function Price() {
 };
 
 export default Price;
+export {host};

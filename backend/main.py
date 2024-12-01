@@ -416,7 +416,7 @@ def search_news():
             {   "timestamp": {"$gte": start_time, "$lt": end_time},
                 f"crypto_counts.{crypto_symbol}": {"$exists": True}
             },
-            {"_id": 0, "headline": 1, "url": 1, "timestamp": 1, "image_url":1, "title":1}
+            {"_id": 0, "headline": 1, "source_url": 1, "timestamp": 1, "image_url":1, "title":1}
         ))
 
         for article in articles:

@@ -25,25 +25,28 @@ function App() {
 
   return (
     <Context.Provider value={{ showPop, setShowPop }}>
-      <div className="App-header">
-        <div className="App-title">Crypto Board</div>
-        <div
-            className={tab === 'price' ? "tab-strong" : "tab"}
-            onClick={() => clickTab('price')}>
-          Price
+        <div className="App-header">
+          <div className="App-title">Crypto Board</div>
+          <div style={{display: "flex", flexDirection: "row", gap: "1vw"}}>
+            <div
+                className={tab === 'price' ? "tab-strong" : "tab"}
+                onClick={() => clickTab('price')}>
+              Price
+            </div>
+            <div
+                className={tab === 'mediaTrends' ? "tab-strong" : "tab"}
+                onClick={() => {clickTab('mediaTrends')}}>
+              Media Trends
+            </div>
+          </div>
         </div>
-        <div
-            className={tab === 'mediaTrends' ? "tab-strong" : "tab"}
-            onClick={() => {clickTab('mediaTrends')}}>
-          Media Trends
-        </div>
-      </div>
-      {tab === 'price' && <Price/>}
-      {tab === 'price' && showPop && <News crypto={showPop}/>}
-      {tab === 'mediaTrends' && <div className="App-mediaTrends">
-        <BestNews />
-        <Chart />
-      </div>}
+        {tab === 'price' && <Price/>}
+        {tab === 'price' && showPop && <News crypto={showPop}/>}
+        {tab === 'mediaTrends' && <div className="App-mediaTrends">
+          <BestNews />
+          <Chart />
+        </div>}
+        <div className="App-footer">Powered by CryptoMarketCap</div>
     </Context.Provider>
   );
 }

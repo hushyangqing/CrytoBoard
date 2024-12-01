@@ -1,7 +1,8 @@
 import './News.css'
 import axios from "axios";
-import React, {useEffect, useState, useContext, useMemo} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {Context} from "../App";
+import {host} from "./Price";
 
 interface NewsProps {
     crypto: string
@@ -11,7 +12,7 @@ interface NewsState {
     headline: string;
     source: string;
     timestamp: number;
-    url: string;
+    source_url: string;
     image_url: string;
     title: string;
 }
@@ -50,10 +51,14 @@ function News({crypto}: NewsProps): JSX.Element {
     const { setShowPop } = context;
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:5000/news/search?crypto_name=${crypto}`)
-            .then(response => setNews(response.data))
+
+        axios.get(`${host}news/search?crypto_name=${crypto}`)
+            .then(response => {
+                setNews(response.data);
+            })
             .catch(error => console.error(`Error fetching news for ${crypto}:`, error));
-    }, []);
+
+    }, [crypto]);
 
     const singlePiece = (data: NewsState) => {
         const date = new Date(data.timestamp * 1000);
@@ -68,18 +73,18 @@ function News({crypto}: NewsProps): JSX.Element {
             <img className="newsImage" src={data.image_url || '/defaultNews.png'} alt="img"/>
             <div className="singlePiece">
                 <div className="singlePieceTitle">
-                    <a href={data.url}>{data.title}</a>
+                    <a href={data.source_url} target="_blank" rel="noreferrer">{data.title}</a>
                     <span style={{fontSize: "calc(1vw - 5px)", fontWeight: "bold", marginLeft: "4px"}}>{formattedDate}</span>
                     <span style={{fontSize: "calc(1vw - 5px)", marginLeft: "4px"}}>from {data.source}</span>
                 </div>
-                <div className="singlePieceContent">{data.headline}</div>
+                <div className="singlePieceContent">{data.headline} ...</div>
                 <div className="dividerSub"/>
             </div>
         </div>
     }
 
     return (<div className="background">
-    <div className="newsBox">
+        <div className="newsBox">
             <div className="newsTitle">
                 <div className="newsTitleName">Top News of {nameMapping[crypto]}</div>
                 <div className="newsTitleCrypto">{crypto}</div>
