@@ -282,10 +282,11 @@ def get_growth_rate_socialMedia(media):
 @app.route('/statistics/bestMedia', methods=['GET'])
 def get_best_media():
     end_time = int(datetime.now().timestamp())
-    start_time = end_time - 86400*60
+    start_time = end_time - 86400*120
     social_media_collection = mongo.cx["SocialMedia"][socialMedias[0]]
     social_counts = get_cryptocurrency_counts(social_media_collection, start_time, end_time)
     social_vector = [social_counts.get(symbol, 0) for symbol in top10Crypto]
+    logger.info(social_vector)
 
     best_similarity = 0
     best_source = "Fox"
@@ -294,6 +295,7 @@ def get_best_media():
         news_collection = mongo.cx["News"][source]
         news_counts = get_cryptocurrency_counts(news_collection, start_time, end_time)
         news_vector = [news_counts.get(symbol, 0) for symbol in top10Crypto]
+        logger.info(news_vector)
 
         similarity = cosine_similarity(social_vector, news_vector)
         if similarity > best_similarity:
@@ -452,4 +454,5 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, handle_shutdown)  # Handle Ctrl+C
     signal.signal(signal.SIGTERM, handle_shutdown)  # Handle Kubernetes termination
 
+    # app.run(debug=False)
     app.run(host='0.0.0.0')
