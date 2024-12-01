@@ -1,0 +1,148 @@
+pipeline {
+    agent any
+
+    environment {
+        AWS_REGION = 'us-west-1'  
+        AWS_ACCOUNT_ID = credentials('aws-account-id')
+        ECR_REGISTRY = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+        ECR_REPO = 'flask-crypto-app'
+        IMAGE_TAG = "v${BUILD_NUMBER}"
+        CLUSTER_NAME = 'flask-crypto-cluster'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                cleanWs()
+                checkout scm
+            }
+        }
+
+        stage('Build and Push Docker Image') {
+            agent{
+                docker {
+                    image 'amazon/aws-cli'
+                    args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+                    reuseNode true
+                }
+            }
+            steps {
+                script {
+                    withCredentials([[
+                        $class: 'AmazonWebServicesCredentialsBinding',
+                        credentialsId: 'aws-access-key-id',
+                        accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                    ]]) {
+                        sh '''
+                            cd backend
+                            amazon-linux-extras install docker
+                            # Create ECR repository if it doesn't exist
+                            aws ecr describe-repositories --repository-names ${ECR_REPO} || \
+                            aws ecr create-repository --repository-name ${ECR_REPO}
+                            
+                            # Login to ECR
+                            aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}
+                            
+                            # Build and push image
+                            docker buildx build --platform linux/amd64 \
+                                -t ${ECR_REGISTRY}/${ECR_REPO}:${IMAGE_TAG} \
+                                -t ${ECR_REGISTRY}/${ECR_REPO}:latest \
+                                -f Dockerfile \
+                                . \
+                                --push
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Update Kubernetes Manifests') {
+            steps {
+                script {
+                    sh """
+                        cd backend
+                        sed -i 's|\${ECR_REGISTRY}|${ECR_REGISTRY}|g' kubernetes/deployment.yaml
+                        sed -i 's|\${ECR_REPOSITORY}|${ECR_REPO}|g' kubernetes/deployment.yaml
+                        sed -i 's|\${IMAGE_TAG}|${IMAGE_TAG}|g' kubernetes/deployment.yaml
+                    """
+                }
+            }
+        }
+
+        stage('Deploy to EKS') {
+            agent {
+                docker {
+                    image 'amazon/aws-cli'
+                    args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+                    reuseNode true
+                }
+            }
+            steps {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'aws-access-key-id',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    sh '''
+                        cd backend
+                        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+                        chmod +x kubectl
+                        mv kubectl /usr/local/bin/
+                        
+                        aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${AWS_REGION}
+                        
+                        # Apply Kubernetes manifests
+                        kubectl apply -f kubernetes/deployment.yaml
+                        kubectl apply -f kubernetes/service.yaml
+                        
+                        # Wait for deployment to complete
+                        kubectl rollout status deployment/flask-crypto-app
+                    '''
+                }
+            }
+        }
+
+        stage('Verify Deployment') {
+            agent {
+                docker {
+                    image 'amazon/aws-cli'
+                    args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+                    reuseNode true
+                }
+            }
+            steps {
+                script {
+                    withCredentials([[
+                        $class: 'AmazonWebServicesCredentialsBinding',
+                        credentialsId: 'aws-access-key-id',
+                        accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                    ]]) {
+                        sh '''
+                            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+                            chmod +x kubectl
+                            mv kubectl /usr/local/bin/
+
+                            aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${AWS_REGION}
+                            
+                            echo "Checking deployment status..."
+                            kubectl get deployment flask-crypto-app
+                            
+                            echo "Checking service status..."
+                            kubectl get service flask-crypto-service
+                            
+                            echo "Checking pods..."
+                            kubectl get pods -l app=flask-crypto
+                        '''
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+}

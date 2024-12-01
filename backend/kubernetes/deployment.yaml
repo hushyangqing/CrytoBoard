@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-crypto-app
+  labels:
+    app: flask-crypto
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-crypto
+  template:
+    metadata:
+      labels:
+        app: flask-crypto
+    spec:
+      containers:
+      - name: flask-crypto
+        image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
+        ports:
+        - containerPort: 5000
