@@ -27,6 +27,7 @@ pipeline {
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
                     sh '''
+                        cd backend
                         # Create ECR repository if it doesn't exist
                         aws ecr describe-repositories --repository-names ${ECR_REPO} || \
                         aws ecr create-repository --repository-name ${ECR_REPO}
@@ -51,6 +52,7 @@ pipeline {
         steps {
             script {
                 sh """
+                    cd backend
                     sed -i 's|\${ECR_REGISTRY}|${ECR_REGISTRY}|g' kubernetes/deployment.yaml
                     sed -i 's|\${ECR_REPOSITORY}|${ECR_REPO}|g' kubernetes/deployment.yaml
                     sed -i 's|\${IMAGE_TAG}|${IMAGE_TAG}|g' kubernetes/deployment.yaml
@@ -75,6 +77,7 @@ pipeline {
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
             ]]) {
                 sh '''
+                    cd backend
                     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
                     chmod +x kubectl
                     mv kubectl /usr/local/bin/
