@@ -282,7 +282,7 @@ def get_growth_rate_socialMedia(media):
 @app.route('/statistics/bestMedia', methods=['GET'])
 def get_best_media():
     end_time = int(datetime.now().timestamp())
-    start_time = end_time - 86400*14
+    start_time = end_time - 86400*60
     social_media_collection = mongo.cx["SocialMedia"][socialMedias[0]]
     social_counts = get_cryptocurrency_counts(social_media_collection, start_time, end_time)
     social_vector = [social_counts.get(symbol, 0) for symbol in top10Crypto]
