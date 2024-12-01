@@ -36,6 +36,7 @@ pipeline {
                     ]]) {
                         sh '''
                             cd backend
+                            amazon-linux-extras install docker
                             # Create ECR repository if it doesn't exist
                             aws ecr describe-repositories --repository-names ${ECR_REPO} || \
                             aws ecr create-repository --repository-name ${ECR_REPO}
