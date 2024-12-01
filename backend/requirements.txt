@@ -1,2 +1,8 @@
-packaging==24.2
-wheel @ file:///opt/homebrew/Cellar/python%403.13/3.13.0_1/libexec/wheel-0.44.0-py3-none-any.whl#sha256=f49b82715dce6365f75eddcb0a9bb47d0d46feaf14bbc739dfcbd677b7073f5b
+Flask==3.0.0
+flask-cors==4.0.0
+flask-pymongo==2.3.0
+APScheduler==3.10.4
+requests==2.31.0
+numpy==1.26.2
+pymongo==4.6.1
+certifi==2023.11.17
