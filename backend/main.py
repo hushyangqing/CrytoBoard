@@ -9,6 +9,12 @@ import time
 import numpy as np 
 from collections import defaultdict, Counter
 import certifi
+import logging
+import signal
+import sys
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 CORS(app)
@@ -19,8 +25,7 @@ app.config['MONGO_URI'] = uri
 try:
     mongo = PyMongo(app, tlsCAFile=certifi.where())
 except Exception as e:
-    print("MongoDB connection error:", e)
-#scheduler = BackgroundScheduler()
+    logger.error("MongoDB connection error:", e)
 
 crytoCurrency = {'BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON', 'ADA', 'SHIB', 'AVAX', 'BCH', 'LINK', 'DOT', 'LEO', 'SUI', 'DAI', 'LTC'}
 nameMapping = {'Bitcoin':'BTC',
@@ -53,11 +58,11 @@ def fetch_and_store_price():
     global start_time, crypto_history, top10Crypto
 
     # For testing, run this only for 10 minutes
-    if datetime.now() > start_time + timedelta(minutes=10):
-        scheduler.remove_job('price_fetch_job')
-        # After 10 minutes, store history and reset
+    if datetime.now() > start_time + timedelta(hours=2):
+        # scheduler.remove_job('price_fetch_job')
+        # # After 10 minutes, store history and reset
         store_history()
-        return
+        start_time = datetime.now()
 
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
@@ -72,7 +77,7 @@ def fetch_and_store_price():
     response = requests.get(url, headers=headers, params=parameters)
     
     if response.status_code != 200:
-        print("Failed to fetch data from API.")
+        logger.error("Failed to fetch data from API.")
         return
     
     data = response.json()
@@ -103,6 +108,8 @@ def fetch_and_store_price():
             })
 
 def store_history():
+    global crypto_history
+
     history_collection = mongo.cx['info']['history_price']
     for symbol, history in crypto_history.items():
         history_collection.update_one(
@@ -110,11 +117,9 @@ def store_history():
             {"$set": {"history": history}},
             upsert=True
         )
-    print("Historical price data stored in MongoDB.")
+    logger.info("Historical price data stored in MongoDB.")
     crypto_history.clear() 
 
-#scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
-#scheduler.start()
 
 ###API Endpoints###
 @app.route('/currentPrice/<symbol>', methods=['GET'])
@@ -175,12 +180,12 @@ def get_cryptocurrency_counts(collection, start_time, end_time):
     }
     documents = list(collection.find(query))
     document_count = len(documents)
-    print(f"Documents found in range {start_time} to {end_time}: {document_count}")
+    logger.info(f"Documents found in range {start_time} to {end_time}: {document_count}")
     crypto_counts = defaultdict(int)
     for doc in documents:
-        for coin in doc.get("crypto_counts", []):
-            for symbol, count in coin.items():
-                crypto_counts[symbol] += 1
+        crypto_counts = doc.get("crypto_counts", {})
+        for symbol, count in crypto_counts.items():
+            crypto_counts[symbol] += 1
     return crypto_counts
 
 def cosine_similarity(vec1, vec2):
@@ -194,8 +199,8 @@ def cosine_similarity(vec1, vec2):
 @app.route('/statistics/growth_rate', methods=['GET'])
 def get_growth_rate():
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 86400  # 24 hours ago
-    start_yesterday = end_time - 2 * 86400  # 48 hours ago
+    start_today = end_time - 7*86400  # 24 hours ago
+    start_yesterday = end_time - 14 * 86400  # 48 hours ago
 
     today_counts = defaultdict(int)
     yesterday_counts = defaultdict(int)
@@ -235,8 +240,8 @@ def get_growth_rate_news(news):
         return jsonify({"error": "Invalid news source"}), 400
     
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 86400  # 24 hours ago
-    start_yesterday = end_time - 2 * 86400
+    start_today = end_time - 7*86400  # 24 hours ago
+    start_yesterday = end_time - 14 * 86400
 
     collection = mongo.cx["News"][news]
     today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
@@ -244,8 +249,8 @@ def get_growth_rate_news(news):
 
     growth_rates = []
     for symbol in top10Crypto:
-        today_count = today_counts[symbol]
-        yesterday_count = yesterday_counts[symbol]
+        today_count = today_counts.get(symbol, 0) 
+        yesterday_count = yesterday_counts.get(symbol, 0)
         growth_rate = calculate_growth_rate(today_count, yesterday_count)
         growth_rates.append({symbol: growth_rate})
 
@@ -257,8 +262,8 @@ def get_growth_rate_socialMedia(media):
         return jsonify({"error": "Invalid socialMedia source"}), 400
     
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 86400  # 24 hours ago
-    start_yesterday = end_time - 2 * 86400
+    start_today = end_time - 7*86400  # 24 hours ago
+    start_yesterday = end_time - 14 * 86400
 
     collection = mongo.cx["SocialMedia"][media]
     today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
@@ -266,8 +271,8 @@ def get_growth_rate_socialMedia(media):
 
     growth_rates = []
     for symbol in top10Crypto:
-        today_count = today_counts[symbol]
-        yesterday_count = yesterday_counts[symbol]
+        today_count = today_counts.get(symbol, 0) 
+        yesterday_count = yesterday_counts.get(symbol, 0)
         growth_rate = calculate_growth_rate(today_count, yesterday_count)
         growth_rates.append({symbol: growth_rate})
 
@@ -277,13 +282,13 @@ def get_growth_rate_socialMedia(media):
 @app.route('/statistics/bestMedia', methods=['GET'])
 def get_best_media():
     end_time = int(datetime.now().timestamp())
-    start_time = end_time - 86400*10
+    start_time = end_time - 86400*14
     social_media_collection = mongo.cx["SocialMedia"][socialMedias[0]]
     social_counts = get_cryptocurrency_counts(social_media_collection, start_time, end_time)
     social_vector = [social_counts.get(symbol, 0) for symbol in top10Crypto]
 
     best_similarity = 0
-    best_source = None
+    best_source = "Fox"
 
     for source in newsSource:
         news_collection = mongo.cx["News"][source]
@@ -296,11 +301,12 @@ def get_best_media():
             best_source = source
     
     headlines=[]
+    logger.info(best_source)
     if best_source:
         news_collection = mongo.cx["News"][best_source]
         articles = list(news_collection.find(
             {"timestamp": {"$gte": start_time, "$lt": end_time}},
-            {"_id": 0, "headline": 1, "url": 1}
+            {"_id": 0, "headline": 1, "source_url": 1}
         ))
         for article in articles:
             if 'headline' in article:
@@ -321,7 +327,7 @@ def get_article_count_and_word_frequency(collection, start_time, end_time):
     }
     documents = list(collection.find(query))
     document_count = len(documents)
-    print(f"Documents found in range {start_time} to {end_time}: {document_count}")
+    logger.info(f"Documents found in range {start_time} to {end_time}: {document_count}")
     article_count = defaultdict(int)
     word_frequency = Counter()
 
@@ -347,7 +353,7 @@ def get_chart_data():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400*120
+        start_time = end_time - 86400*14
 
     chart_data = []
 
@@ -416,7 +422,7 @@ def search_news():
             {   "timestamp": {"$gte": start_time, "$lt": end_time},
                 f"crypto_counts.{crypto_symbol}": {"$exists": True}
             },
-            {"_id": 0, "headline": 1, "url": 1, "timestamp": 1, "image_url":1, "title":1}
+            {"_id": 0, "headline": 1, "source_url": 1, "timestamp": 1, "image_url":1, "title":1}
         ))
 
         for article in articles:
@@ -429,7 +435,21 @@ def search_news():
 
     return jsonify(results)
 
+def handle_shutdown(signum, frame):
+    print("Shutting down scheduler gracefully...")
+    scheduler.shutdown(wait=False)
+    sys.exit(0)
+
 if __name__ == '__main__':
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
+    scheduler.start()
+
     # fetch_and_store_price()
     # app.run(debug=True)
+
+    # Handle termination signals
+    signal.signal(signal.SIGINT, handle_shutdown)  # Handle Ctrl+C
+    signal.signal(signal.SIGTERM, handle_shutdown)  # Handle Kubernetes termination
+
     app.run(debug=False)
