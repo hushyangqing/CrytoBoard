@@ -171,8 +171,12 @@ socialMedias=["X"]
 
 def calculate_growth_rate(today_count, yesterday_count):
     if yesterday_count == 0:
-        return None if today_count == 0 else float('inf')  
-    return ((today_count - yesterday_count) / yesterday_count)
+        if today_count == 0:
+            return "None"  
+        else:
+            return "Infinite" 
+    growth_rate = ((today_count - yesterday_count) / yesterday_count) 
+    return f"{growth_rate:.2f}" 
 
 def get_cryptocurrency_counts(collection, start_time, end_time):
     query = {
@@ -454,5 +458,5 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, handle_shutdown)  # Handle Ctrl+C
     signal.signal(signal.SIGTERM, handle_shutdown)  # Handle Kubernetes termination
 
-    # app.run(debug=False)
+    #app.run(debug=False)
     app.run(host='0.0.0.0')
