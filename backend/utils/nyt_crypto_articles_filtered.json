@@ -1,0 +1,1222 @@
+[
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    },
+    {
+        "title": "Bitcoin and other cryptocurrencies plunge, mirroring global markets.",
+        "headline": "The precipitous falls show that digital currencies remain vulnerable to the same broader economic forces that affect technology stocks and risky investments.",
+        "timestamp": 1722787200,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/08/05/multimedia/datawrapper_blrpO-promo/datawrapper_blrpO-promo-threeByTwoSmallAt2X-v3.png?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/08/05/business/bitcoin-stock-market.html?searchResultPosition=1"
+    },
+    {
+        "title": "U.S. Approves Investment Product Tied to Popular Cryptocurrency Ether",
+        "headline": "The Securities and Exchange Commission gave its blessing to a fund that tracks the price of the most valuable cryptocurrency after Bitcoin.",
+        "timestamp": 1716393600,
+        "crypto_counts": {
+            "BTC": 1,
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/05/23/multimedia/23ethereum-hzmf/23ethereum-hzmf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/05/23/technology/ether-etf-sec.html?searchResultPosition=2"
+    },
+    {
+        "title": "2 Stole $230 Million in Cryptocurrency and Went on a Spending Spree, U.S. Says",
+        "headline": "Malone Lam, 20, and Jeandiel Serrano, 21, schemed to obtain 4,100 Bitcoin from a single victim, federal prosecutors said.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/09/20/multimedia/20xp-cryptofraud-2/20xp-cryptofraud-2-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/09/20/us/crypto-fraud-arrests.html?searchResultPosition=3"
+    },
+    {
+        "title": "Pastor Charged With Cryptocurrency Fraud Said God Told Him to Do It",
+        "headline": "In a civil action, prosecutors in Colorado said that a Denver pastor and his wife created and sold a cryptocurrency that was “practically worthless” and then pocketed more than $1 million.",
+        "timestamp": 1705939200,
+        "crypto_counts": {
+            "SOL": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/23/business/oakImage-1706044520397/oakImage-1706044520397-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/23/us/colorado-pastor-crypto-fraud-eli-regalado.html?searchResultPosition=4"
+    },
+    {
+        "title": "New York Woman Gets 18 Years for Funding Terrorism With Cryptocurrency",
+        "headline": "Prosecutors said Victoria Jacobs sent funds to Bitcoin wallets controlled by a terrorist training group that operated in Syria.",
+        "timestamp": null,
+        "crypto_counts": {
+            "BTC": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/04/30/multimedia/30crypto-terror-sentence-czhf/30crypto-terror-sentence-czhf-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/04/30/nyregion/cryptocurrency-terrorism-victoria-jacobs.html?searchResultPosition=7"
+    },
+    {
+        "title": "Is Cryptocurrency Like Stocks and Bonds? Courts Move Closer to an Answer.",
+        "headline": "Federal judges are weighing whether digital currencies should be subject to the same rules as stocks and bonds. The outcome could shape crypto’s future in the U.S.",
+        "timestamp": 1706198400,
+        "crypto_counts": {
+            "ETH": 1
+        },
+        "image_url": "https://static01.nyt.com/images/2024/01/30/business/26crypto-security-print1/00crypto-sec-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale",
+        "source_url": "https://www.nytimes.com/2024/01/26/technology/cryptocurrency-stocks-bonds-courts-move-closer-to-an-answer.html?searchResultPosition=10"
+    }
+]
