@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Highcharts from 'highcharts';
 import axios from 'axios';
 import './Chart.css';
+import {host} from "../Price/Price";
 
 function Chart() {
     const chartContainer = useRef<HTMLDivElement>(null);
@@ -26,10 +27,10 @@ function Chart() {
         
         // USES MOCK START TIME
         const mockStartTimeStr = "2023-11-01T00:00:00"
-        const startTimeStr = formatDateTime(startTime);
+        // const startTimeStr = formatDateTime(startTime);
         const endTimeStr = formatDateTime(endTime);
     
-        axios.get(`http://127.0.0.1:5000/chart_data`, {
+        axios.get(`${host}chart_data`, {
             params: {
                 // Replace with startTimeStr to get last 24 hours data
                 start_time: mockStartTimeStr,
@@ -71,7 +72,7 @@ function Chart() {
                 type: 'column'
             },
             title: {
-                text: type === 'articles' ? 'Number of Articles by Media Source' : 'Word Frequency by Media Source',
+                text: type === 'articles' ? 'Number of Related Articles by Media Source' : 'Word Frequency by Media Source',
                 align: 'left'
             },
             xAxis: {
