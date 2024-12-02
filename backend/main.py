@@ -58,7 +58,7 @@ def fetch_and_store_price():
     global start_time, crypto_history, top10Crypto
 
     # For testing, run this only for 10 minutes
-    if datetime.now() > start_time + timedelta(hours=2):
+    if datetime.now() > start_time + timedelta(hours=12):
         # scheduler.remove_job('price_fetch_job')
         # # After 10 minutes, store history and reset
         store_history()
@@ -448,7 +448,7 @@ def handle_shutdown(signum, frame):
 
 if __name__ == '__main__':
     scheduler = BackgroundScheduler()
-    scheduler.add_job(fetch_and_store_price, 'interval', minutes=5, id='price_fetch_job')
+    scheduler.add_job(fetch_and_store_price, 'interval', minutes=10, id='price_fetch_job')
     scheduler.start()
 
     # fetch_and_store_price()
