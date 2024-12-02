@@ -13,7 +13,7 @@
     background-image: url('../../public/nytimes.png');
     background-position: center;
     background-size: cover;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .bullet-screen-fox {
@@ -23,7 +23,8 @@
     margin: auto;
     background-image: url('../../public/fox.png');
     background-size: cover;
-    overflow: hidden;
+    background-position: center;
+    /*overflow: hidden;*/
 }
 
 .bullet {

@@ -150,7 +150,7 @@ function Price() {
 
     return (
         <div className="price">
-            <h2>Top 10 Trending Cryptocurrencies</h2>
+            <h2 style={{textAlign: "center"}}>Top 10 Trending Cryptocurrencies</h2>
             <table style={{ width: "100%", borderCollapse: 'collapse', marginTop: '2vw' }}>
                 <thead>
                     <tr>
