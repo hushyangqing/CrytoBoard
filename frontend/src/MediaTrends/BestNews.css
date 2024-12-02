@@ -1,9 +1,27 @@
-.bullet-screen {
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 2vw 0;
+}
+
+.bullet-screen-nytimes {
     position: relative;
     width: 80vw;
     height: 80vh;
     margin: auto;
-    background-image: url('../../public/background.jpeg');
+    background-image: url('../../public/nytimes.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bullet-screen-fox {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    background-image: url('../../public/fox.png');
     background-size: cover;
     overflow: hidden;
 }
@@ -16,6 +34,8 @@
     color: white;
     z-index: 10;
     animation: moveLeft 10s linear;
+    /*animation-iteration-count: 1;*/
+    animation-fill-mode: forwards;
 }
 
 @keyframes moveLeft {

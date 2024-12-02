@@ -9,6 +9,7 @@ function Chart() {
     const [activeTab, setActiveTab] = useState<'articles' | 'frequency'>('articles');
     const chartInstance = useRef<Highcharts.Chart | null>(null);
     const [chartData, setChartData] = useState<any[]>([]);
+    const [cryptos, setCryptos] = useState<string[]>([]);
 
     const formatDateTime = (date: Date): string => {
         const year = date.getFullYear();
@@ -38,17 +39,22 @@ function Chart() {
             }
         })
         .then(response => {
+            console.log(response.data);
             setChartData(response.data);
             updateChart();
         })
         .catch(error => {
             console.error('Error fetching chart data:', error);
         });
+
+        axios.get(`${host}top10_symbols`)
+            .then(response => setCryptos(response.data))
+            .catch(error => console.error('Error fetching top10 symbols:', error));
     }, []);
 
     const transformData = (rawData: any[], type: 'articles' | 'frequency'): Highcharts.Options => {
         const sources = ['Fox', 'NYTimes', 'X'];
-        const cryptos = ['BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON'];
+        // const cryptos = ['BTC', 'ETH', 'USDT', 'BNB', 'SOL', 'USDC', 'XRP', 'DOGE', 'TRX', 'TON'];
         
         const series = sources.map(source => {
             const sourceData = rawData.find(item => item[source]);

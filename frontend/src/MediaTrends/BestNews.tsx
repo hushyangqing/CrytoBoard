@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './BestNews.css'
-
-const bulletMessages = [
-    "Hello, World!",
-    "This is a bullet message!",
-    "React is awesome!",
-    "Enjoy the animation!",
-    "TypeScript and React rocks!",
-    "Keep watching!"
-];
+import axios from "axios";
+import {host} from "../Price/Price";
 
 interface BulletProps {
     text: string;
     topPosition: number;
     delay: number;
+    bestMedia: string;
 }
 
-const Bullet: React.FC<BulletProps> = ({ text, topPosition, delay }) => {
+const Bullet: React.FC<BulletProps> = ({ text, topPosition, delay, bestMedia }) => {
     return (
         <div
             className="bullet"
-            style={{
+            style={bestMedia === 'NYTimes' ? {
                 top: `${topPosition}%`,
-                animationDelay: `${delay}s`
+                // animationDelay: `${delay}s`,
+                color: 'black'
+            }: {
+                top: `${topPosition}%`,
+                // animationDelay: `${delay}s`,
+                color: 'white'
             }}
         >
             {text}
@@ -33,33 +32,63 @@ const Bullet: React.FC<BulletProps> = ({ text, topPosition, delay }) => {
 const BestNews: React.FC = () => {
     const [bullets, setBullets] = useState<BulletProps[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [bestMedia, setBestMedia] = useState<string>('NYTimes');
+    const [bulletMessages, setBulletMessages] = useState<string[]>([]);
     let newBullet: BulletProps;
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            newBullet = {
-                text: bulletMessages[currentIndex],
-                topPosition: Math.random() * 80,
-                delay: Math.random()
-            };
+        axios.get(`${host}/statistics/bestMedia`)
+            .then(response => {
+                // console.log(response.data);
+                setBulletMessages(response.data.articles);
+                setBestMedia(response.data.best_source);
+            })
+            .catch(error => console.error('Error fetching bestMedia', error));
+    }, []);
 
-            setBullets((prevBullets) => [...prevBullets, newBullet]);
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % bulletMessages.length);
-        }, 2000);
+    useEffect(() => {
+        if (currentIndex < 100) {
+            console.log("run")
+            const interval = setInterval(() => {
+                newBullet = {
+                    text: bulletMessages[currentIndex],
+                    topPosition: Math.random() * 80,
+                    delay: Math.random() * 2,
+                    bestMedia: bestMedia
+                };
 
-        return () => clearInterval(interval);
-    }, [currentIndex]);
+                setBullets((prevBullets) => [...prevBullets, newBullet]);
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % bulletMessages.length);
+            }, 3000 * Math.random());
+            return () => clearInterval(interval);
+        }
+    }, [currentIndex, bestMedia]);
 
     return (
-        <div className="bullet-screen">
-            {bullets.map((bullet, index) => (
-                <Bullet
-                    key={index}
-                    text={bullet.text}
-                    topPosition={bullet.topPosition}
-                    delay={bullet.delay}
-                />
-            ))}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="title"> 🔥 The Most Reflective News Media</div>
+            {bestMedia !== 'NYTimes' ? <div className="bullet-screen-fox">
+                {bullets.map((bullet, index) => (
+                    <Bullet
+                        key={index}
+                        text={bullet.text}
+                        topPosition={bullet.topPosition}
+                        delay={bullet.delay}
+                        bestMedia={bestMedia}
+                    />
+                ))}
+            </div> : <div className="bullet-screen-nytimes">
+                {bullets.map((bullet, index) => (
+                    <Bullet
+                        key={index}
+                        text={bullet.text}
+                        topPosition={bullet.topPosition}
+                        delay={bullet.delay}
+                        bestMedia={bestMedia}
+                    />
+                ))}
+            </div>}
+
         </div>
     );
 };
