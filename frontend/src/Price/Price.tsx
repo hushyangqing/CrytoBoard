@@ -19,7 +19,7 @@ interface GrowthRateData {
     [key: string]: any;
 }
 
-const host = "http://a9cdaab46934f4d9086910bcff2591e3-261144523.us-west-1.elb.amazonaws.com/"
+const host = "http://127.0.0.1:5000/"
 
 const getCryptoIcon = (cryptoName: string): string => {
     try {

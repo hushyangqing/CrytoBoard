@@ -458,5 +458,5 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, handle_shutdown)  # Handle Ctrl+C
     signal.signal(signal.SIGTERM, handle_shutdown)  # Handle Kubernetes termination
 
-    #app.run(debug=False)
-    app.run(host='0.0.0.0')
+    app.run(debug=False)
+    #app.run(host='0.0.0.0')
