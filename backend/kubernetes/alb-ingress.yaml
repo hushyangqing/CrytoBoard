@@ -17,6 +17,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: flask-crypto-app
+                name: flask-crypto-service
                 port:
                   number: 80
