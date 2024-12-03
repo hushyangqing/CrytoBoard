@@ -26,15 +26,12 @@ function Chart() {
         const endTime = new Date();
         const startTime = new Date(endTime.getTime() - (24 * 60 * 60 * 1000)); // 24 hours ago
         
-        // USES MOCK START TIME
-        const mockStartTimeStr = "2023-11-01T00:00:00"
-        // const startTimeStr = formatDateTime(startTime);
+        const startTimeStr = formatDateTime(startTime);
         const endTimeStr = formatDateTime(endTime);
     
         axios.get(`${host}chart_data`, {
             params: {
-                // Replace with startTimeStr to get last 24 hours data
-                start_time: mockStartTimeStr,
+                start_time: startTimeStr,
                 end_time: endTimeStr
             }
         })
