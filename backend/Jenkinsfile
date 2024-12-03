@@ -102,7 +102,6 @@ pipeline {
 
                         # Wait for ALB to be ready
                         kubectl apply -f kubernetes/alb-ingress.yaml
-                        kubectl wait --for=condition=ready ingress/flask-crypto-ingress --timeout=5m
                     '''
                 }
             }
