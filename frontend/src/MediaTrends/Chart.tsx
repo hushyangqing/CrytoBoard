@@ -24,7 +24,7 @@ function Chart() {
 
     useEffect(() => {
         const endTime = new Date();
-        const startTime = new Date(endTime.getTime() - (24 * 60 * 60 * 1000)); // 24 hours ago
+        const startTime = new Date(endTime.getTime() - (24 * 60 * 60 * 1000 * 180)); // 24 hours ago
         
         const startTimeStr = formatDateTime(startTime);
         const endTimeStr = formatDateTime(endTime);
