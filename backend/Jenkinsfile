@@ -96,9 +96,13 @@ pipeline {
                         # Apply Kubernetes manifests
                         kubectl apply -f kubernetes/deployment.yaml
                         kubectl apply -f kubernetes/service.yaml
+                        kubectl apply -f kubernetes/alb-ingress.yaml
                         
                         # Wait for deployment to complete
                         kubectl rollout status deployment/flask-crypto-app
+
+                        # Wait for ALB to be ready
+                        kubectl wait --for=condition=ready ingress/flask-crypto-ingress --timeout=5m
                     '''
                 }
             }
