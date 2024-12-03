@@ -17,7 +17,20 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 CORS(app)
+
+@app.after_request
+def add_cors_headers(response):
+    # Allow access from all origins with wildcard
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    # Allow all methods
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+    # Allow all headers
+    response.headers['Access-Control-Allow-Headers'] = '*'
+    return response
+
+
 coinMarketkey='cd4615ad-0703-4d8d-8d23-5562769f50f6'
 # mongodb connection
 uri = "mongodb+srv://qyang:13868543625Wu@cluster0.2n4bw.mongodb.net/?retryWrites=true&w=majority&appName=cluster0"
@@ -446,6 +459,7 @@ def handle_shutdown(signum, frame):
     scheduler.shutdown(wait=False)
     sys.exit(0)
 
+
 if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     scheduler.add_job(fetch_and_store_price, 'interval', minutes=10, id='price_fetch_job')
@@ -458,5 +472,5 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, handle_shutdown)  # Handle Ctrl+C
     signal.signal(signal.SIGTERM, handle_shutdown)  # Handle Kubernetes termination
 
-    app.run(debug=False)
-    #app.run(host='0.0.0.0')
+    #app.run(debug=False)
+    app.run(host='0.0.0.0')

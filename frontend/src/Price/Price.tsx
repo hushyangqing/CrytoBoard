@@ -19,7 +19,7 @@ interface GrowthRateData {
     [key: string]: any;
 }
 
-const host = "http://127.0.0.1:5000/"
+const host = "http://127.0.0.1:5001/"
 
 const getCryptoIcon = (cryptoName: string): string => {
     try {
