@@ -13,8 +13,9 @@ When you change the backend port, the
 need to be changed accordingly.
 
 ## access the web
-http://localhost:8080
+    http://localhost:8080
 
+If you change the ports in docker-compose.yaml frontend part, please change accordingly!
 # backend: Python Flask
 
     python3 -m venv .venv
