@@ -257,8 +257,8 @@ def get_growth_rate_news(news):
         return jsonify({"error": "Invalid news source"}), 400
     
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 7*86400  # 24 hours ago
-    start_yesterday = end_time - 14 * 86400
+    start_today = end_time - 30*86400  # 24 hours ago
+    start_yesterday = end_time - 60 * 86400
 
     collection = mongo.cx["News"][news]
     today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
@@ -279,8 +279,8 @@ def get_growth_rate_socialMedia(media):
         return jsonify({"error": "Invalid socialMedia source"}), 400
     
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 7*86400  # 24 hours ago
-    start_yesterday = end_time - 14 * 86400
+    start_today = end_time - 30*86400  # 24 hours ago
+    start_yesterday = end_time - 60 * 86400
 
     collection = mongo.cx["SocialMedia"][media]
     today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
