@@ -31,17 +31,18 @@ const Bullet: React.FC<BulletProps> = ({ text, topPosition, delay, bestMedia }) 
 
 const BestNews: React.FC = () => {
     const [bullets, setBullets] = useState<BulletProps[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [bestMedia, setBestMedia] = useState<string>('NYTimes');
+    const [currentIndex, setCurrentIndex] = useState(-1);
+    const [bestMedia, setBestMedia] = useState<string>('');
     const [bulletMessages, setBulletMessages] = useState<string[]>([]);
     let newBullet: BulletProps;
 
     useEffect(() => {
         axios.get(`${host}/statistics/bestMedia`)
             .then(response => {
-                // console.log(response.data);
+                console.log(response.data);
                 setBulletMessages(response.data.articles);
                 setBestMedia(response.data.best_source);
+                setCurrentIndex(0);
             })
             .catch(error => console.error('Error fetching bestMedia', error));
     }, []);
@@ -49,6 +50,7 @@ const BestNews: React.FC = () => {
     useEffect(() => {
         if (currentIndex < 100) {
             console.log("run")
+            console.log("bulletMessages.length", bulletMessages.length);
             const interval = setInterval(() => {
                 newBullet = {
                     text: bulletMessages[currentIndex],
