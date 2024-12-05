@@ -216,8 +216,8 @@ def cosine_similarity(vec1, vec2):
 @app.route('/statistics/growth_rate', methods=['GET'])
 def get_growth_rate():
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 7*86400  # 24 hours ago
-    start_yesterday = end_time - 14 * 86400  # 48 hours ago
+    start_today = end_time - 30*86400  # 24 hours ago
+    start_yesterday = end_time - 60 * 86400  # 48 hours ago
 
     today_counts = defaultdict(int)
     yesterday_counts = defaultdict(int)
@@ -257,8 +257,8 @@ def get_growth_rate_news(news):
         return jsonify({"error": "Invalid news source"}), 400
     
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 7*86400  # 24 hours ago
-    start_yesterday = end_time - 14 * 86400
+    start_today = end_time - 30*86400  # 24 hours ago
+    start_yesterday = end_time - 60 * 86400
 
     collection = mongo.cx["News"][news]
     today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
@@ -279,8 +279,8 @@ def get_growth_rate_socialMedia(media):
         return jsonify({"error": "Invalid socialMedia source"}), 400
     
     end_time = int(datetime.now().timestamp())
-    start_today = end_time - 7*86400  # 24 hours ago
-    start_yesterday = end_time - 14 * 86400
+    start_today = end_time - 30*86400  # 24 hours ago
+    start_yesterday = end_time - 60 * 86400
 
     collection = mongo.cx["SocialMedia"][media]
     today_counts = get_cryptocurrency_counts(collection, start_today, end_time)
@@ -299,7 +299,7 @@ def get_growth_rate_socialMedia(media):
 @app.route('/statistics/bestMedia', methods=['GET'])
 def get_best_media():
     end_time = int(datetime.now().timestamp())
-    start_time = end_time - 86400*120
+    start_time = end_time - 86400*180
     social_media_collection = mongo.cx["SocialMedia"][socialMedias[0]]
     social_counts = get_cryptocurrency_counts(social_media_collection, start_time, end_time)
     social_vector = [social_counts.get(symbol, 0) for symbol in top10Crypto]
@@ -372,7 +372,7 @@ def get_chart_data():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400*14
+        start_time = end_time - 86400*180
 
     chart_data = []
 
@@ -429,7 +429,7 @@ def search_news():
             return jsonify({"error": "Invalid date format. Use ISO format: YYYY-MM-DDTHH:MM:SS"}), 400
     else:
         end_time = int(datetime.now().timestamp())
-        start_time = end_time - 86400*60
+        start_time = end_time - 86400*90
         # print(start_time)
 
 
