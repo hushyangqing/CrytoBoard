@@ -15,6 +15,7 @@ need to be changed accordingly.
 ## access the website
 http://localhost:8080
 
+If you change the ports in docker-compose.yaml frontend part, please change accordingly!
 # Dev Mode (Skip if docker executed successfully)
 ## backend: Python Flask
     
